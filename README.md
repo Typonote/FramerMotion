@@ -73,8 +73,8 @@ const boxVariants = {
       type: "spring",
       duration: 0.5,
       bounce: 0.5,
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
+      delayChildren: 0.3,             // 하위 컴포넌트의 애니메이션이 시작 타이밍을 지정
+      staggerChildren: 0.2,           // 하위 컴포넌트의 애니메이션을 설정한 시간 만큼 시차를 둘 수 있습니다.
     },
   },
 };
