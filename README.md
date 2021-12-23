@@ -1,46 +1,109 @@
-# Getting Started with Create React App
+# FramerMotion 🎨
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+framer-motion는 리액트에서 애니메이션과 제스쳐를 쉽게 다룰 수 있도록 해주는 라이브러리이다. <br/>
+- 링크 1: https://www.framer.com/motion/ <br/>
+- 링크 2: https://github.com/framer/motion
 
-## Available Scripts
 
-In the project directory, you can run:
+## 1. Installation
 
-### `npm start`
+```
+npm install framer-motion  OR  yarn add framer-motion
+```
+```
+import { motion } from "framer-motion"
+...
+...
+<motion.div></motion.div>
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- non EcmaScript module Error 발생 시, CRACO 설정을 진행해야 한다.
+```
+npm install @craco/craco --save
+```
+```
+craco.config.js 생성 후, 적용
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+module.exports = {
+  webpack: {
+    configure: {
+      module: {
+        rules: [
+          {
+            type: "javascript/auto",
+            test: /\.mjs$/,
+            include: /node_modules/,
+          },
+        ],
+      },
+    },
+  },
+};
+```
+```
+Package.json의 "scripts" 부분 수정
 
-### `npm test`
+"scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2. Animation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 3. Variants
 
-### `npm run eject`
+![Hnet com-image](https://user-images.githubusercontent.com/81430564/147209835-b4b5f2db-ea26-44f0-bbbe-92e88e1754bb.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+const boxVariants = {
+  start: {
+    opacity: 0,
+    scale: 0.5,
+  },
+  end: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+      bounce: 0.5,
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+const circleVariants = {
+  start: {
+    opacity: 0,
+    y: 10,
+  },
+  end: {
+    opacity: 1,
+    y: 0,
+  },
+};
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    <Wrapper>
+      <Box variants={boxVariants} initial="start" animate="end">
+        <Circle variants={circleVariants} />
+        <Circle variants={circleVariants} />
+        <Circle variants={circleVariants} />
+        <Circle variants={circleVariants} />
+      </Box>
+    </Wrapper>
+ 
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
