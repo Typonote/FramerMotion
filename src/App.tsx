@@ -25,6 +25,23 @@ const Box = styled(motion.div)`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 
+const Btn = styled.button`
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: transparent;
+  border: 3px solid white;
+  color: white;
+
+  &:hover {
+    color: black;
+    background-color: white;
+  }
+`;
+
 const box = {
   entry: (back: boolean) => ({
     x: back ? -500 : 500,
@@ -72,8 +89,10 @@ function App() {
           {visible}
         </Box>
       </AnimatePresence>
-      <button onClick={nextPlease}>next</button>
-      <button onClick={prevPlease}>prev</button>
+      <div>
+        <Btn onClick={prevPlease}>prev</Btn>
+        <Btn onClick={nextPlease}>next</Btn>
+      </div>
     </Wrapper>
   );
 }
