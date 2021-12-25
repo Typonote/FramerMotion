@@ -102,6 +102,29 @@ const circleVariants = {
  
 ```
 
+## 4. Drag
+
+![Hnet com-image](https://user-images.githubusercontent.com/81430564/147386278-ec9cc76f-efa7-4999-8d7b-aa0e6982a6ec.gif)
+
+
+## 5. Path
+
+![Hnet com-image](https://user-images.githubusercontent.com/81430564/147386338-c14d8923-58af-446c-9baf-a457989e8fb9.gif)
+
+## 6. Slider
+
+![Hnet com-image](https://user-images.githubusercontent.com/81430564/147386366-6df1643c-61d1-431f-a384-f5ab3015182e.gif)
+
+## 7. Layout Id
+
+![Hnet com-image](https://user-images.githubusercontent.com/81430564/147386431-a32573b0-b637-4ebb-9b26-314234fda7ed.gif)
+
+
+## 8. Modal
+
+![Hnet com-image](https://user-images.githubusercontent.com/81430564/147386394-16f0632c-ca71-4f8b-a6cb-e9426070ad1b.gif)
+
+
 
 
 
